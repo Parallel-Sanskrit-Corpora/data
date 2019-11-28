@@ -1,0 +1,161 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.tabs {
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 0;
+    margin-right: em(2);
+    flex: 1;
+    min-width: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.tab {
+  &__access {
+    width: 100%;
+    min-height: em($tab-access-height);
+    box-sizing: border-box;
+    padding: em($spacing-smaller + 2) em($spacing-small) em($spacing-smaller - 2);
+    margin: 0;
+    border: 0;
+    border-radius: em($tab-access-border-radius) em($tab-access-border-radius) 0 0;
+    overflow: hidden;
+    background-color: darken($light, 10%);
+    color: $dark;
+    fill: var(--brand-primarylighten);
+    font: inherit;
+    line-height: 0;
+    text-align: center;
+    cursor: pointer;
+    opacity: .8;
+    transition: all $transition-duration $transition-timing; // sass-lint:disable-line no-transition-all
+    -webkit-font-smoothing: inherit; // sass-lint:disable-line no-vendor-prefixes
+    -moz-osx-font-smoothing: inherit; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+
+    &::-moz-focus-inner { // sass-lint:disable-line no-vendor-prefixes
+      padding: 0;
+      border: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--active {
+      background-color: $light;
+      box-shadow: $tabs-shadow;
+      fill: var(--brand-primarylighten);
+      opacity: 1;
+    }
+
+    &--short {
+      min-height: 2.75em;
+    }
+  }
+
+  &__icon {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__label {
+    display: block;
+    margin-top: em($spacing-smaller);
+    overflow: hidden;
+    font-weight: bold;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &-hide {
+      &_icons {
+        margin-top: 0;
+        display: block !important;
+      }
+    }
+
+    @include breakpoint($below-medium) {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: em($spacing-small) em($spacing-small);
+    border-radius: 0 em($tab-border-radius) em($tab-border-radius);
+    color: $dark;
+    line-height: 1.4;
+    background-color: $light;
+    box-shadow: $tabs-shadow;
+
+    /deep/ h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.3;
+
+      @include breakpoint($beyond-medium) {
+        font-size: 2em;
+      }
+    }
+
+    /deep/ h3 {
+      margin: em($spacing-medium) 0 em($spacing-small);
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    /deep/ p {
+      margin: 1em 0;
+    }
+
+    /deep/ strong, b {
+      font-weight: bold;
+    }
+
+    /deep/ & > *:first-child {
+      margin-top: 0 !important;
+    }
+
+    /deep/ & > *:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    @each $property, $value in $categories-colors {
+      $i: index($categories-colors, $property $value);
+
+      /deep/ &--cat-#{$i} h2,
+      /deep/ &--cat-#{$i} h3 {
+        color: $value;
+      }
+    }
+
+    &.user-info {
+      padding: em($gutter * 2);
+    }
+  }
+
+  @each $property, $value in $categories-colors {
+    $i: index($categories-colors, $property $value);
+
+    &--cat-#{$i} &__access {
+      fill: lighten($value, 15%);
+
+      &--active {
+        fill: $value;
+      }
+    }
+  }
+}

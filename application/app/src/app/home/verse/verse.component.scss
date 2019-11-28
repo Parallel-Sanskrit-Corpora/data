@@ -1,0 +1,92 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.home__search {
+  &-item {
+    &__comment {
+      font-size: 1.5vw;
+      margin-top: 10px;
+      text-align: justify;
+      &-item {
+        display: block;
+      }
+    }
+    &__info {
+      margin-top: 10px;
+      &-item {
+        &__volume {
+          color: var(--brand-action);
+        }
+        &__chapter {
+          color: var(--brand-success);
+        }
+      }
+    }
+    &__devanagari {
+      margin-top: 10px;
+      font-family: Eczar, sans-serif !important;
+      &-item {
+        display: block;
+      }
+    }
+    &__iast {
+      margin-top: 10px;
+      &-block {
+        padding: 1vw 2vw;
+        font-size: 1.5vw;
+        text-align: justify;
+        color: var(--brand-action);
+
+        /deep/ a {
+          color: var(--brand-action);
+          text-decoration: none;
+        }
+      }
+      &-item {
+        display: block;
+        &_wrapper {
+          & * {
+            display: inline-block;
+          }
+
+          fa {
+            margin: 0 4px;
+            font-size: 1.5vw;
+            cursor: pointer;
+          }
+        }
+
+        &_split {
+          color: var(--brand-success);
+        }
+
+        &_parallel {
+        }
+      }
+      &-control {
+        &_active {
+          color: var(--brand-action)
+        }
+      }
+    }
+    &__translation {
+      margin-top: 10px;
+      &-item {
+        text-align: justify;
+        display: block;
+      }
+    }
+  }
+}
+
+::ng-deep span.comment {
+  &__index {
+    vertical-align: super;
+    font-size: 1.5vw;
+    color: var(--brand-action);
+  }
+  &__number {
+    color: var(--brand-action);
+  }
+}

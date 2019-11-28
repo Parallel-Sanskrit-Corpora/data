@@ -1,0 +1,16 @@
+<div class="tabs">
+  <ul class="tabs__list">
+    <li *ngFor="let tab of tabs"
+        class="tabs__list-item tab tab--cat-{{ tab.categoryId }}"
+        (click)="selectTab(tab)">
+      <button class="tab__access"
+              [ngClass]="{'tab__access--short': hideIcons}"
+              [class.tab__access--active]="tab.active">
+        <span class="tab__label" [ngClass]="{'tab__label-hide_icons': hideIcons}">{{tab.label}}</span>
+      </button>
+    </li>
+  </ul>
+  <div class="tab__content {{addClass}}">
+    <ng-content></ng-content>
+  </div>
+</div>

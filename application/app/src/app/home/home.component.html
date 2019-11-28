@@ -1,0 +1,15 @@
+<button (click)="toggleMenu()" class="hamburger">
+  <span>toggle menu</span>
+</button>
+
+<div class="home">
+  <div class="home__titles">
+    <span class="home__titles sub__title">{{titles.main}} [{{titles.sub | lowercase}}]</span>
+  </div>
+  <div>
+    <app-verse-search [displayDevanagari]="displayDevanagari" [searchMode]="searchMode"></app-verse-search>
+  </div>
+</div>
+
+<app-menu [@slideInOut]="menuState" (close)="toggleMenu()" (toggleDevanagari)="toggleDevanagariEvent($event)"
+          (toggleSearchMode)="toggleSearchModeEvent($event)"></app-menu>

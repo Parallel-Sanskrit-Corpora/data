@@ -1,0 +1,53 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.choices {
+  margin-bottom: em(-1 * $spacing-small);
+  text-align: center;
+}
+
+.choice {
+  $base: $button-base;
+  display: inline-block;
+  min-height: em($button-height);
+  min-width: em(100);
+  box-sizing: border-box;
+  padding: em(4, $base) em($spacing-smaller, $base) em(2, $base);
+  margin: 0 em($spacing-small) em($spacing-small) 0;
+  border: solid em($button-border-width, $base) var(--brand-primary);
+  border-radius: em($button-border-radius, $base);
+  background-color: $light;
+  color: var(--brand-primary);
+  line-height: em($button-height - 6, $base);
+  cursor: pointer;
+  transition: all $transition-duration $transition-timing; // sass-lint:disable-line no-transition-all
+
+  &__input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &:hover,
+  &--active {
+    border-color: var(--brand-primary);
+    background-color: var(--brand-primary);
+    color: $light;
+  }
+
+  @each $property, $value in $categories-colors {
+    $i: index($categories-colors, $property $value);
+
+    &--cat-#{$i} {
+      border-color: $value;
+      color: $value;
+
+      &:hover,
+      &.choice--active {
+        border-color: $value;
+        background-color: $value;
+        color: $light;
+      }
+    }
+  }
+}

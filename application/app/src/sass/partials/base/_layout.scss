@@ -1,0 +1,83 @@
+.row {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-right: em($gutter);
+  padding-left: em($gutter);
+
+
+  &--centered {
+    max-width: em($container-max-width);
+    margin: 0 auto;
+  }
+
+  &--narrower-centered {
+    max-width: em($container-max-width/2);
+    margin: 0 auto;
+  }
+
+  &__cols-wrapper {
+    margin-right: em(-$gutter);
+    margin-left: em(-$gutter);
+  }
+
+  &__col {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding-right: em($gutter);
+    padding-left: em($gutter);
+
+    &-video {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &--vertical-align-middle {
+      vertical-align: middle;
+    }
+
+    $parts: (
+      full: 12,
+      half: 6,
+      third: 4,
+      quarter: 3,
+      fifth: 5,
+      seventh: 7,
+      eighth: 8,
+      ninth: 9,
+      tenth: 10,
+      eleventh: 11,
+      two: 2,
+      one: 1
+    );
+
+    $thresholds: (
+      sm: $beyond-small,
+      md: $beyond-medium,
+      lg: $beyond-large,
+      wd: $beyond-wide
+    );
+
+    $threshold: xs;
+    @each $name, $divider in $parts {
+      &--#{$name}-#{$threshold} {
+        width: ((100% / 12) * $divider);
+      }
+    }
+
+    @each $key, $threshold in $thresholds {
+      @include breakpoint($threshold) {
+        @each $name, $divider in $parts {
+          &--#{$name}-#{$key} {
+            width: ((100% / 12) * $divider);
+          }
+        }
+      }
+    }
+  }
+}

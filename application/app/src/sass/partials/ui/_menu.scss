@@ -1,0 +1,42 @@
+.menu {
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: em($spacing-small/2) em($spacing-small);
+
+    &-pseudo {
+      &--title {
+        vertical-align: middle;
+        display: inline-block;
+        padding: 6px;
+
+        border: 2px solid coral;
+        background: lightcoral;
+
+        div:first-child {
+          padding-bottom: 5px;
+        }
+
+        &_stop {
+          &-follow {
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $dark;
+    text-decoration: none;
+    transition: color $transition-duration $transition-timing;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--brand-action);
+    }
+  }
+}

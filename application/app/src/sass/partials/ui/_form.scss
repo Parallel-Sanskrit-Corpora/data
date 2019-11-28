@@ -1,0 +1,117 @@
+.form {
+  &__label {
+    display: block;
+    margin: 1em 0;
+  }
+
+  &__input {
+    $base: $input-base;
+    height: em($input-height + (2*$input-border-width));
+    box-sizing: border-box;
+    padding: 0 em($spacing-smaller, $base);
+    border: solid em($input-border-width) $dark;
+    border-radius: em($input-border-radius);
+    background-color: $light;
+    background-image: none;
+    box-shadow: none;
+    font-size: em($base);
+    -moz-appearance:textfield;
+
+    &--full-width {
+      width: 100%;
+    }
+
+    &::-moz-focus-inner { // sass-lint:disable-line no-vendor-prefixes
+      padding: 0;
+      border: 0;
+    }
+  
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $off-dark;
+      transition: color $transition-duration $transition-timing;
+    }
+
+    &::-moz-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $off-dark;
+      opacity: 1;
+      transition: color $transition-duration $transition-timing;
+    }
+
+    &:-ms-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $off-dark;
+      transition: color $transition-duration $transition-timing;
+    }
+
+    &:-moz-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $off-dark;
+      opacity: 1;
+      transition: color $transition-duration $transition-timing;
+    }
+
+    &-group {
+      position: relative;
+      display: table;
+      width: em(100);
+      margin: 0 auto;
+      border-collapse: separate;
+    }
+
+    &-group & {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      padding-right: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &-group &-unit {
+      display: table-cell;
+      vertical-align: middle;
+      width: em(1);
+      padding: 0 em($spacing-smaller, $base);
+      border: solid em($input-border-width) $dark;
+      border-left: 0;
+      border-radius: em($input-border-radius);
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &--error {
+      border-color: $negative;
+      color: $negative;
+
+      &::-webkit-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+        color: $negative;
+      }
+
+      &::-moz-placeholder { // sass-lint:disable-line no-vendor-prefixes
+        color: $negative;
+      }
+
+      &:-ms-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+        color: $negative;
+      }
+
+      &:-moz-placeholder { // sass-lint:disable-line no-vendor-prefixes
+        color: $negative;
+      }
+    }
+
+    &--error + &-unit {
+      border-color: $negative;
+      color: $negative;
+    }
+  }
+}

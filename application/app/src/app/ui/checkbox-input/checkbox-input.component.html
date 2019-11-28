@@ -1,0 +1,26 @@
+<div class="choices" [formGroup]="categoryFormGroup">
+  <label *ngFor="let option of options; let j = index;"
+         class="choice choice--cat-{{ categoryId }}"
+         [ngClass]="{ 'choice--active' : option.checked === true }">
+    <input class="choice__input"
+           [multiple]="true"
+           type="checkbox"
+           [name]="name"
+           [id]="name"
+           [value]="option.code"
+           (change)="valueChanged(option, $event.target.checked)"
+           [formControlName]="name">
+    {{ option.label_translation.title }}
+  </label>
+  <label *ngIf="hasAnyOption"
+         class="choice choice--cat-{{ categoryId }}"
+         [ngClass]="{ 'choice--active' : anyOptionValue === true }">
+    <input class="choice__input"
+           type="checkbox"
+           [name]="name"
+           [id]="name"
+           [value]="'noOptions'"
+           (change)="anyChanged($event.target.checked)"
+           [formControlName]="name">Rien de tout cela
+  </label>
+</div>

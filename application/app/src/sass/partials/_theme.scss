@@ -1,0 +1,89 @@
+@import 'utils/em';
+
+//== Colors
+$brand-primary: rgb(74, 92, 152) !default;
+$lighten-brand-primary: lighten($brand-primary, 10%) !default;
+$brand-action: rgb(237, 127, 16) !default;
+
+$brand-therasomnia: rgb(188, 84, 213) !default;
+$brand-linecoaching: rgb(58, 153, 216) !default;
+$brand-theraserena: rgb(0, 135, 88) !default;
+
+$categories-colors: (
+  category-1: rgb(229, 53, 44),
+  category-2: rgb(58, 153, 216),
+  category-3: rgb(58, 158, 191),
+  category-4: rgb(0, 135, 88),
+  category-5: rgb(188, 84, 213)
+);
+
+$off-light: rgb(245, 245, 240) !default;
+$light: rgb(255, 255, 255) !default;
+$dark: rgb(45, 45, 45) !default;
+$off-dark: lighten($dark, 20%) !default;
+
+$positive: rgb(22, 160, 133) !default;
+$neutral: rgb(255, 150, 0) !default;
+$negative: rgb(208, 1, 27) !default;
+$notification: rgb(147, 137, 83) !default;
+
+$shadow: 0 em(3) em(3) rgba(0, 0, 0, .15);
+$lighter-shadow: 0 em(4) em(4) 0 rgba(0, 0, 0, .1);
+
+//== Spacings
+$spacing-smaller: 10 !default;
+$spacing-small: 15 !default;
+$spacing-medium: 30 !default;
+$spacing-large: 50 !default;
+$spacing-larger: 80 !default;
+
+$gutter: $spacing-small !default;
+
+//== Container
+$container-max-width: (1200 + ($gutter * 2)) !default;
+
+//== RWD
+$below-small: (max: 319);
+$beyond-small: (min: 320);
+$small: (min: 320, max: 499);
+
+$below-middle: (max: 400);
+$below-medium: (max: 499);
+$beyond-medium: (min: 500);
+$medium: (min: 500, max: 799);
+
+$below-large: (max: 799);
+$beyond-large: (min: 800);
+$large: (min: 800, max: (1200 + ($gutter * 2)-1));
+
+$below-wide: (max: (1200 + ($gutter * 2)-1));
+$beyond-wide: (min: (1200 + ($gutter * 2)));
+
+//== TYPO
+$default-font: 'PT Serif', serif;
+
+//== Animations
+$transition-duration: .2s;
+$transition-timing: ease-in-out;
+
+//== Button
+$button-base: 16;
+$button-height: 40 !default;
+$button-border-radius: 3 !default;
+$button-border-width: 1 !default;
+
+//== Input
+$input-base: 16;
+$input-height: 30 !default;
+$input-border-radius: 3 !default;
+$input-border-width: 1 !default;
+
+//==Tile
+$tile-border-radius: 5 !default;
+$tile-shadow: $lighter-shadow;
+
+//==Tabs
+$tab-access-border-radius: 5 !default;
+$tab-access-height: 60 !default;
+$tab-border-radius: 5 !default;
+$tabs-shadow: $lighter-shadow;

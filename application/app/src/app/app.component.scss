@@ -1,0 +1,52 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.main {
+  min-height: 100vh;
+}
+
+.sidenav {
+  width: 80%;
+  background: var(--brand-primary);
+  overflow-y: hidden;
+
+  &__header {
+    height: 3em;
+    padding: em($gutter * 2) 0;
+    display: flex;
+    justify-content: space-around;
+
+    &--icon {
+      color: white;
+      padding: 0.5em;
+      font-size: 2em;
+    }
+  }
+
+  &__content {
+    height: 100%;
+
+    &--item {
+      height: 4em;
+      line-height: 4em;
+      padding: 0 em($gutter);
+
+      & a {
+        text-decoration: none;
+        color: $light;
+      }
+
+      &__selected {
+        border-left: 4px solid $light;
+      }
+    }
+  }
+}
+
+.mat-drawer-content {
+  overflow: unset;
+}
+
+
+

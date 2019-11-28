@@ -1,0 +1,73 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.gauge {
+  $base: $button-base;
+  display: flex;
+  padding-top: em(5 + (1.4 * $base), $base);
+
+  &__tick {
+    position: relative;
+    display: inline-block;
+    height: em($input-height + (2*$input-border-width));
+    min-width: em($spacing-medium);
+    box-sizing: border-box;
+    border-right: solid em($button-border-width, $base) $light;
+    background-color: var(--brand-primary);
+    cursor: pointer;
+    transition: all $transition-duration $transition-timing; // sass-lint:disable-line no-transition-all
+    flex: 1;
+
+    @each $property, $value in $categories-colors {
+      $i: index($categories-colors, $property $value);
+
+      &--cat-#{$i} {
+        background-color: $value;
+      }
+    }
+
+    & + & {
+      border-left: 0;
+    }
+
+    &:first-child {
+      border-bottom-left-radius: em($input-border-radius);
+      border-top-left-radius: em($input-border-radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: em($input-border-radius);
+      border-bottom-right-radius: em($input-border-radius);
+    }
+
+    &--active ~ & {
+      background-color: darken($off-light, 5%);
+    }
+
+    &-input {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    &-label {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-bottom: em(5, 14);
+      color: $dark;
+      font-size: em(14, $base);
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    &:last-child &-label {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &--untouched &__tick {
+    background-color: darken($off-light, 5%);
+  }
+}

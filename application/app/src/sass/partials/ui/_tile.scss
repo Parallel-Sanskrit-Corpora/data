@@ -1,0 +1,205 @@
+.tile {
+  position: relative;
+  height: 100%;
+  border-radius: em($tile-border-radius);
+  overflow: hidden;
+  background-color: $light;
+  box-shadow: $tile-shadow;
+
+  &__ill-wrapper {
+    object-fit: cover;
+    position: relative;
+    height: em(250);
+    border-radius: em($tile-border-radius) em($tile-border-radius) 0 0;
+    overflow: hidden;
+    background-color: var(--brand-primarylighten);
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint($beyond-large) {
+      height: em(100);
+    }
+  }
+
+  &__ill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &__content {
+    position: relative;
+    padding: em($spacing-small);
+    color: $dark;
+    font-size: 0.8em;
+
+    @include breakpoint($beyond-medium) {
+      font-size: 1em;
+    }
+
+
+    p {
+      margin: 1em 0;
+      line-height: 1.4;
+    }
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin: em($spacing-small) 0;
+    color: var(--brand-primary);
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    margin: em($spacing-small) 0;
+    color: var(--brand-primary);
+    font-size: 1em;
+    text-align: center;
+  }
+
+  &__program {
+    &-title {
+      height: 3em;
+      background-color: var(--brand-primary);
+      color: $light;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 3em;
+      padding-left: em($gutter);
+      padding-right: em($gutter);
+
+      @include breakpoint($beyond-medium) {
+        font-size: 1.2em;
+      }
+
+      &__left {
+        float: left;
+      }
+
+      &__right {
+        float: right;
+      }
+    }
+
+    &-content {
+      padding: em($gutter);
+      line-height: 1.5em;
+      font-size: 1em;
+
+      @include breakpoint($beyond-medium) {
+        font-size: 0.8em;
+      }
+
+
+      strong, b {
+        font-weight: bold;
+      }
+
+      p {
+        line-height: 1.4em;
+      }
+
+      &__subtitle {
+        padding-bottom: em($gutter);
+        font-size: 1em;
+        color: var(--brand-primary);
+        font-weight: bold;
+
+        @include breakpoint($beyond-medium) {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    &-footer {
+      height: 2em;
+      padding: em($gutter);
+
+      &__text {
+        float: left;
+        line-height: 2.5em;
+      }
+
+      &__link {
+        color: var(--brand-primary);
+        float: left;
+        font-size: 1em;
+
+      }
+
+      &__button {
+        float: right;
+      }
+    }
+  }
+
+  &__article {
+
+    &-title {
+      background-color: $light;
+      opacity: .8;
+      height: 40%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      line-height: 1.2em;
+      padding: 0.8em;
+
+      &__header {
+        font-size: 0.8em;
+      }
+
+      &__content {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @include breakpoint($below-large) {
+    &__with-ill-inner-wrapper &__content {
+      padding-top: em($spacing-medium);
+    }
+  }
+
+  @include breakpoint($beyond-large) {
+    &__with-ill-inner-wrapper {
+      padding-left: 30%;
+    }
+
+    &__ill-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 30%;
+      border-radius: em($tile-border-radius) 0 0 em($tile-border-radius);
+    }
+
+    &__content {
+      padding: em($spacing-medium);
+    }
+
+    &__with-ill-inner-wrapper &__content {
+      padding-left: em($spacing-large);
+    }
+  }
+}

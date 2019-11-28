@@ -1,0 +1,134 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.header {
+  padding: em($spacing-medium/2);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint($beyond-large) {
+    text-align: initial;
+    padding: em($spacing-large/2) em($spacing-large/2) em($spacing-small/2);
+  }
+
+  &-right {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($below-large) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    &-button {
+      font-size: 35px;
+    }
+
+    @include breakpoint($beyond-large) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    vertical-align: middle;
+    margin: em($spacing-small/2) 0;
+    line-height: 0;
+
+    @include breakpoint($below-large) {
+      width: 200px;
+      box-sizing: border-box;
+
+      &:nth-child(odd) {
+        padding-right: em($spacing-small/2);
+      }
+
+      &:nth-child(even) {
+        padding-left: em($spacing-small/2);
+      }
+    }
+
+    @include breakpoint($small) {
+      width: 150px;
+    }
+
+    @include breakpoint($beyond-large) {
+      margin-right: em($spacing-medium);
+    }
+
+    &-link {
+      max-width: 130%;
+      display: inline-block;
+    }
+  }
+
+  &__menu {
+    padding-top:em($spacing-smaller);
+    width: 400px;
+    padding-right:em($spacing-large);
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($large) {
+      width: 400px;
+      padding-right:em($spacing-medium);
+    }
+    a {
+      color: $light;
+      font-size: 16px;
+      text-decoration: none;
+
+      @include breakpoint($large) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__control {
+    width: 130px;
+    text-align: right;
+  }
+}
+
+/deep/ .cdk-overlay-connected-position-bounding-box {
+  left: 0 !important;
+  top: 80px !important;
+
+  /deep/ .mat-menu-panel {
+    max-width: 300px;
+    width: 300px;
+  }
+}
+
+/deep/ .mat-menu-panel {
+  .menu-header {
+    padding: 20px;
+    text-align: right;
+    background-color: var(--brand-primary);
+    i.fal {
+      margin: 0 10px;
+      color: $light;
+      font-size: 1.6em;
+    }
+
+    i.fal:not(.fa-sign-out-alt) {
+      padding-right: 30px;
+    }
+  }
+
+  a {
+    font-size: 20px;
+    color: var(--brand-primary);
+    text-decoration: none;
+  }
+
+  button.mat-menu-item:not(:last-child) {
+    border-bottom: 1px solid var(--brand-primary);
+  }
+
+  & /deep/ .mat-menu-content {
+    padding: 0 !important;
+  }
+}

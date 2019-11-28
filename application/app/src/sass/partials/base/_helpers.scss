@@ -1,0 +1,134 @@
+.section {
+  padding-top: em($spacing-small);
+  padding-bottom: em($spacing-small);
+
+  &__title {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 100;
+    color: var(--brand-primary);
+    line-height: 1.3;
+
+    @include breakpoint($beyond-medium) {
+      font-size: 2em;
+    }
+  }
+
+  &__post {
+    video {
+      width: 100%;
+    }
+
+    &-ill {
+      margin: 1.5em 0;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &-content {
+      color: $dark;
+      line-height: 1.4;
+      padding-bottom: em($gutter);
+      padding-top: em($spacing-medium);
+
+      h3 {
+        margin: em($spacing-medium) 0 em($spacing-small);
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 1em 0;
+
+        img {
+          height: 7em;
+        }
+      }
+
+      b,
+      strong {
+        font-weight: bold;
+      }
+
+      ol {
+        list-style: decimal;
+        font-weight: bold;
+        padding-left: em($gutter);
+      }
+
+      li {
+        margin-bottom: 1em;
+      }
+
+      blockquote {
+        quotes: "\201C""\201D""\2018""\2019";
+        font-size: 1.5em;
+
+        p {
+          display: inline;
+        }
+      }
+
+      & > *:first-child {
+        margin-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+
+      &.checkup {
+        h3 {
+          margin: 0 0 em($spacing-small) !important;
+        }
+        p {
+          margin: 0 !important;
+          img {
+            margin-left: 0 !important;
+          }
+          &:last-child {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.title {
+  &--therasomnia {
+    color: $brand-therasomnia;
+  }
+
+  &--linecoaching {
+    color: $brand-linecoaching;
+  }
+
+  &--theraserena {
+    color: $brand-theraserena;
+  }
+}
+
+img.ng-failed-lazyloaded {
+  display: none !important;
+}
+
+img.ng-lazyloaded {
+  animation: fadein .5s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

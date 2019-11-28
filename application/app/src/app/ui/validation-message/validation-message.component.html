@@ -1,0 +1,4 @@
+<div *ngIf="control.invalid && (control.errors.missed || control.dirty)"
+     class="validation validation--error align-center">
+  <div class="validation-item" *ngFor="let error of errorMessages">{{error}}</div>
+</div>

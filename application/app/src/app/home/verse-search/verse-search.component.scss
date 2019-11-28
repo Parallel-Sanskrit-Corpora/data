@@ -1,0 +1,64 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.home {
+  font-family: 'Charter';
+  &__search {
+    &-form {
+      width: 100%;
+    }
+
+    &-full-width {
+      width: 100%;
+    }
+
+    &-half-width {
+      width: 50%;
+    }
+
+    &-label {
+      font-size: 1.5vw;
+    }
+  }
+
+  &__verses {
+    margin-top: 20px;
+  }
+}
+
+fa {
+  cursor: pointer;
+}
+
+/deep/ .mat-form-field, .mat-option {
+  font-family: $default-font;
+  font-size: 1.5vw;
+}
+/deep/ .mat-slide-toggle-content {
+  font-family: $default-font;
+  font-size: 14px;
+}
+
+/deep/ .mat-card {
+  border-radius: 10px;
+  padding: 3vw 2vw !important;
+}
+
+/deep/ .mat-card-content {
+  font-family: $default-font;
+  font-size: 2vw;
+}
+
+/deep/ .mat-focused {
+  .mat-form-field-label {
+    color: var(--brand-primary) !important;
+  }
+  .mat-form-field-ripple {
+    background-color: var(--brand-primary) !important;
+  }
+}
+
+/deep/ .mat-slide-toggle:not(:last-child) {
+  margin-right: 6vw !important;
+}

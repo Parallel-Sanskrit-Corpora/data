@@ -1,0 +1,22 @@
+<form class="home__search-form">
+  <mat-form-field class="home__search-full-width">
+    <input type="text" placeholder="{{controlPlaceholder}}"
+           (change)="inputChanged()" matInput [formControl]="queryValue" [matAutocomplete]="auto">
+    <fa name="search" matSuffix (click)="inputChanged()"></fa>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<div *ngIf="verses.length > 0" class="home__verses">
+  <mat-card class="home__search-list">
+    <mat-card-content>
+      <div class="verse__search-list__content">
+        <app-verse [verse]="verse" [displayDevanagari]="displayDevanagari" *ngFor="let verse  of verses"
+        [search]="queryValue.value"></app-verse>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

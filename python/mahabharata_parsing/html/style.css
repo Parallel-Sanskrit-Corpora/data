@@ -1,0 +1,161 @@
+@font-face {
+    font-family: Sahitya;
+    src: url(../fonts/Sahitya-Regular.ttf);
+}
+
+@font-face {
+    font-family: Charis;
+    src: url(../fonts/charis-sil.ttf);
+}
+
+@font-face {
+    font-family: Charis-Italic;
+    src: url(../fonts/charis-sil-italic.ttf);
+}
+
+@font-face {
+    font-family: Charis-Bold;
+    src: url(../fonts/charis-sil-bold.ttf);
+}
+
+body {
+    font-family: Charis;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+sup, .comment_number {
+    color: #FDA50F;
+    font-family: Charis-Bold;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.headers {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.header {
+    text-transform: uppercase;
+}
+
+.header_1 {
+    font-size: 50px;
+}
+
+.header_2 {
+    font-size: 20px;
+}
+
+.header_3 {
+    font-size: 28px;
+}
+
+.header_5, .chapter_title {
+    font-size: 18px;
+    font-family: Charis-Bold;
+}
+
+.header_year {
+    margin-top: 100px;
+    font-size: 16px;
+    font-family: Charis-Bold;
+}
+
+.header_annotation {
+    margin-top: 100px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.annotation_item {
+    font-size: 14px;
+    text-align: justify;
+    text-indent: 1.5em;
+    display: block;
+}
+
+.contents {
+}
+
+.content_item {
+    display: inline-block;
+    width: 16%;
+}
+
+.content_splitter, .chapter_splitter {
+    height: 150px;
+}
+
+.content_title  a {
+    color: #333;
+    font-family: Charis-Bold;
+    font-size: 18px;
+}
+
+.chapters {
+}
+
+.chapter_content {
+    margin-bottom: 20px;
+}
+
+.chapter_content, .clear {
+    clear: both;
+}
+
+.chapter_content > .chapter_block {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.comments {
+    margin-bottom: 50px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.sanskrit {
+    font-family: Sahitya;
+    font-size: 25px;
+}
+
+.person_translation, .person_iast {
+    color: #FDA50F;
+}
+
+.comment_text {
+    text-align: justify;
+}
+
+.iast {
+    font-size: 14px;
+    text-align: left;
+    padding-right: 10px;
+    width: 430px;
+}
+
+.iast_author, .translation_author {
+    font-family: Charis-Italic;
+}
+
+.translation {
+    font-size: 14px;
+    text-align: justify;
+    width: 660px;
+}
+
+.chapter {
+    margin-bottom: 60px;
+}
+
+.range {
+    float: right;
+    display: block;
+    color: #000;
+    font-family: Charis-Bold;
+}

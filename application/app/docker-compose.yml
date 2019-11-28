@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  partnerportal:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./:/usr/src/app:z
+      # cache downloaded node modules into a named Docker volume (see content
+      # in /var/lib/docker/volumes/partnerportal_cache/_data)
+      - cache:/home/user/.npm
+
+volumes:
+  cache:

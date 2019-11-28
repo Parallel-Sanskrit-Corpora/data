@@ -1,0 +1,37 @@
+<div class="home__search-item">
+  <div class="home__search-item__info">
+    <span class="home__search-item__info-item home__search-item__info-item__volume">{{volume}}</span>
+    <span class="home__search-item__info-item home__search-item__info-item__chapter">.{{chapter}}</span>
+  </div>
+  <div *ngIf="displayDevanagari && devanagari.length > 0" class="home__search-item__devanagari">
+    <span *ngFor="let item of devanagari" class="home__search-item__devanagari-item">{{item}}</span>
+  </div>
+  <div *ngIf="iast.length > 0" class="home__search-item__iast">
+    <div *ngFor="let item of iast">
+      <div class="home__search-item__iast-item_wrapper">
+        <span class="home__search-item__iast-item" [innerHTML]="item.iast | highlight: search"></span>
+        <fa name="text-height" (click)="toggleBlockVisibility(item, 'splitBlockActive')"
+            *ngIf="item.split_iast"
+            [ngClass]="{'home__search-item__iast-control_active': item.splitBlockActive}"></fa>
+        <fa name="link" (click)="toggleBlockVisibility(item, 'linkBlockActive')"
+            *ngIf="item.parallels.length > 0"
+            [ngClass]="{'home__search-item__iast-control_active': item.linkBlockActive}"></fa>
+      </div>
+      <div class="home__search-item__iast-block home__search-item__iast-item_split" *ngIf="item.splitBlockActive"
+           [innerHTML]="item.split_iast | keepHtml"></div>
+      <div *ngIf="item.parallels.length > 0 && item.linkBlockActive">
+        <div class="home__search-item__iast-block home__search-item__iast-item_parallel" *ngFor="let parallel of item.parallels">
+          {{parallel.iast}} / ({{parallel.chapter_name}}, {{parallel.verse}}, {{parallel.number}}) [{{parallel.similarity}}]
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="translation.length > 0" class="home__search-item__translation">
+    <div class="home__search-item__translation-item" [innerHTML]="translation | highlight: search | keepHtml"></div>
+  </div>
+  <div *ngIf="translation.length > 0" class="home__search-item__comment">
+    <div class="home__search-item__comment-item" *ngFor="let comment of comments">
+      <span class="comment__item"><span class="comment__number">{{comment.number}}</span> - <span class="comment__body">{{comment.text}}</span></span>
+    </div>
+  </div>
+</div>

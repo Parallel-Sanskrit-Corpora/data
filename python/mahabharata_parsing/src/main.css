@@ -1,0 +1,53 @@
+@font-face {
+  font-family: SantipurOT;
+  src: url(../fonts/SantipurOT.ttf);
+}
+
+@font-face {
+  font-family: gargi;
+  src: url(../fonts/gargi.ttf);
+}
+
+table {
+  width: 100%;
+  font-family: 'SantipurOT';
+  border-collapse: collapse;
+}
+
+table, th, td {
+  font-size: 12px;
+  border: 1px solid black;
+}
+
+center {
+  border-bottom: 1px solid black;
+  font-family: 'SantipurOT';
+  font-size: 16px;
+}
+
+center p {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+big {
+  font-family: 'SantipurOT';
+  font-size: 18px;
+}
+
+p.origin_page {
+  font-size: 16px;
+  background-color: black;
+  padding: 5px 10px;
+  color: #fff;
+  opacity: .2;
+  font-family: 'SantipurOT';
+}
+
+p, p *, dl, dl * {
+  font-family: 'SantipurOT';
+  font-size: 13px;
+  text-align: justify;
+  text-indent: 25px;
+}

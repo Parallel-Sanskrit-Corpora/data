@@ -1,0 +1,14 @@
+<div class="choices" [formGroup]="categoryFormGroup">
+  <label *ngFor="let option of options; let j = index;"
+         class="choice choice--cat-{{ categoryId }}"
+         [ngClass]="{ 'choice--active' : choiceValue === option.code }">
+    <input class="choice__input"
+           type="radio"
+           [name]="name"
+           [id]="name"
+           [value]="option.code"
+           (change)="valueChanged()"
+           [formControlName]="name">
+    {{ option.label_translation.title }}
+  </label>
+</div>

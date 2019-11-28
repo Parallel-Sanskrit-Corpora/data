@@ -1,0 +1,19 @@
+<div class="menu__wrapper">
+  <div class="menu__control">
+    <fa class="menu__control-item" name="times" (click)="closeEvent()"></fa>
+  </div>
+  <form class="configuration-form">
+    <section class="configuration__body">
+      <mat-slide-toggle
+        class="configuration__body-item"
+        [formControl]="searchMode"
+        (change)="slideChanged('searchMode')"
+      > Поиск по номеру</mat-slide-toggle>
+      <mat-slide-toggle
+        class="configuration__body-item"
+        [formControl]="displayDevanagari"
+        (change)="slideChanged('displayDevanagari')"
+      >Devanāgarī</mat-slide-toggle>
+    </section>
+  </form>
+</div>

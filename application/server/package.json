@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aleksey Mordvinov <dotaxlevel@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-multiparty": "^2.2.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "string-similarity": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-angular": "^4.0.1",
+    "fs": "0.0.1-security",
+    "le_node": "^1.8.0",
+    "moment-timezone": "^0.5.25",
+    "mysql2": "^1.6.5",
+    "q": "^1.5.1",
+    "sequelize": "^5.8.6",
+    "winston": "^3.2.1"
+  }
+}

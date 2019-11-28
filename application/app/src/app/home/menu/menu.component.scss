@@ -1,0 +1,59 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+:host {
+  background: var(--brand-primary);
+  position: fixed;
+  left: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  min-width: 250px;
+  z-index: 9999;
+  font-family: $default-font;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.menu {
+  &__wrapper {
+    margin: 10px;
+
+    .configuration {
+      &__label {
+        display: block;
+      }
+      &__body{
+        margin-top: 10px;
+        &-item {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  &__control {
+    text-align: right;
+
+    &-item {
+      font-size: 20px;
+      color: var(--brand-success);
+      cursor: pointer;
+    }
+  }
+}
+
+ul {
+  font-size: 18px;
+  line-height: 3;
+  font-weight: 400;
+  margin: 1.5vw;
+  list-style: none;
+}
+
+/deep/ .mat-slide-toggle {
+  display: block !important;
+}

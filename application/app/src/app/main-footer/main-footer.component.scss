@@ -1,0 +1,63 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+
+.main-footer {
+  padding-top: em($spacing-small/2);
+  padding-bottom: em($spacing-small/2);
+  background-color: var(--brand-primary);
+  color: $light;
+  text-align: center;
+
+  @include breakpoint($beyond-large) {
+    text-align: initial;
+
+    &__row {
+      display: table;
+      width: 100%;
+      height: em($spacing-larger - $spacing-small);
+    }
+
+    &__cell {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  &__logo {
+    margin: em($spacing-small/2) 0;
+    line-height: 0;
+
+    @include breakpoint($beyond-large) {
+      display: inline-block;
+      margin-right: em($spacing-medium);
+    }
+
+    &-link {
+      display: inline-block;
+    }
+  }
+
+  &__mention {
+    margin: em($spacing-small) 0;
+    opacity: 0.6;
+    line-height: 1.2;
+
+    @include breakpoint($beyond-large) {
+      margin: em($spacing-small/2) 0;
+      display: inline-block;
+    }
+  }
+
+  &__menu {
+    color: $light;
+
+    @include breakpoint($beyond-large) {
+      display: inline-block;
+    }
+
+    .menu__link {
+      color: $light;
+    }
+  }
+}

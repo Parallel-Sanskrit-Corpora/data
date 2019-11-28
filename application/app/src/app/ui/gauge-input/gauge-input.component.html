@@ -1,0 +1,17 @@
+<div class="gauge" [formGroup]="categoryFormGroup" [ngClass]="{ 'gauge--untouched' : isGaugeValueNull(gaugeValue) }">
+  <label *ngFor="let value of ' '.repeat( gaugeItemsCount ).split(''); let j = index;"
+         class="gauge__tick gauge__tick--cat-{{ categoryId }}"
+         [ngClass]="{ 'gauge__tick--active' : gaugeValue === (min === '0' ? j : j + 1) }">
+    <input class="gauge__tick-input"
+           type="radio"
+           [id]="name"
+           [name]="name"
+           [value]="min === '0' ? j : j + 1"
+           (change)="valueChanged()"
+           [formControlName]="name">
+    <span class="gauge__tick-label"
+          *ngIf="j === 0">{{ minLabel }}</span>
+    <span class="gauge__tick-label"
+          *ngIf="j === max - min">{{ maxLabel }}</span>
+  </label>
+</div>

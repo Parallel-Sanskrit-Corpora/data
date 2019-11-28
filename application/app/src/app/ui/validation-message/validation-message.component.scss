@@ -1,0 +1,16 @@
+@import 'theme';
+@import 'utils/em';
+
+.validation {
+  font-size: 1.25em;
+  padding-bottom: em($spacing-medium/2);
+  &--error {
+    font-weight: bold;
+    color: $negative;
+  }
+  &-item {
+    &:not(:last-child) {
+      padding-bottom: em($spacing-small/2);
+    }
+  }
+}

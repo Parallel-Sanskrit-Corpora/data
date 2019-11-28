@@ -1,0 +1,114 @@
+.button {
+  $base: $button-base;
+  display: inline-block;
+  width: auto;
+  min-height: em($button-height);
+  box-sizing: border-box;
+  padding: em(4, $base) em($spacing-smaller, $base) em(2, $base);
+  margin: 0;
+  border: solid em($button-border-width, $base) var(--brand-action);
+  border-radius: em($button-border-radius, $base);
+  overflow: visible;
+  background: var(--brand-action);
+  color: $light;
+  fill: $light;
+  font-size: em($base);
+  font-weight: bold;
+  line-height: em($button-height - 10, $base);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-font-smoothing: inherit; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: inherit; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+
+  &__main {
+    &:hover {
+      background: $light;
+      color: var(--brand-action);
+      fill: var(--brand-action);
+    }
+  }
+
+  &__wide {
+    width: 100%;
+  }
+
+  &::-moz-focus-inner { // sass-lint:disable-line no-vendor-prefixes
+    padding: 0;
+    border: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: initial;
+    opacity: 0.7;
+  }
+
+  &--therasomnia {
+    border-color: $brand-therasomnia;
+    background: $brand-therasomnia;
+    margin-top: 10px;
+  }
+
+  &--linecoaching {
+    border-color: $brand-linecoaching;
+    background: $brand-linecoaching;
+    margin-top: 10px;
+  }
+
+  &--theraserena {
+    border-color: $brand-theraserena;
+    background: $brand-theraserena;
+    margin-top: 10px;
+  }
+
+  &--dialog-yes {
+    width: 40%;
+    margin: 0 1em;
+    text-align: center;
+  }
+
+  &--dialog-no {
+    width: 40%;
+    margin: 0 1em;
+    text-align: center;
+  }
+
+  &--bigger {
+    @include breakpoint($beyond-medium) {
+      font-size: 1.5em;
+    }
+  }
+
+  &--openwork {
+    border: solid em($button-border-width, $base) var(--brand-primary);
+    background: transparent;
+    color: var(--brand-primary);
+    fill: var(--brand-primary);
+    transition: all $transition-duration $transition-timing; // sass-lint:disable-line no-transition-all
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: var(--brand-primary);
+      color: $light;
+      fill: $light;
+    }
+  }
+
+  &--minimal {
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    color: var(--brand-primary);
+    fill: var(--brand-primary);
+  }
+
+  &__arrow {
+    padding-left: em($spacing-smaller, $base);
+  }
+}

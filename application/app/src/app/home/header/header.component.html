@@ -1,0 +1,31 @@
+<header class="header row">
+  <div class="header__burger" *ngIf="notAuthorizedMenu.length > 0">
+    <button mat-icon-button class="header__burger-button" (click)="toggleSidenav()">
+      <fa name="bars"></fa>
+    </button>
+  </div>
+  <h1 class="header__logo">
+    <a class="header__logo-link"
+       routerLink="/">
+      <img
+        src="{{logoUrl}}"
+        width="240"
+        title="Mutuelle Ociane groupe Matmut"
+        alt="Mutuelle Ociane groupe Matmut"/>
+    </a>
+  </h1>
+  <div class="header-right">
+    <div class="header__menu" *ngIf="notAuthorizedMenu.length > 0">
+      <div *ngFor="let menuItem of notAuthorizedMenu">
+        <a [href]="menuItem.url" *ngIf="!menuItem.state"><span>{{menuItem.label}}</span></a>
+        <a [routerLink]="menuItem.url" *ngIf="menuItem.state"><span>{{menuItem.label}}</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item *ngFor="let menuItem of notAuthorizedMenu">
+    <a [href]="menuItem.url" *ngIf="!menuItem.state"><span><span>{{menuItem.label}}</span></span></a>
+    <a [routerLink]="menuItem.url" *ngIf="menuItem.state"><span><span>{{menuItem.label}}</span></span></a>
+  </button>
+</mat-menu>

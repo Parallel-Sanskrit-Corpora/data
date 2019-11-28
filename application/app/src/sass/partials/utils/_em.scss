@@ -1,0 +1,6 @@
+//16: default browsers font-size, on which media queries are based
+$browser-context: 16 !default;
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}

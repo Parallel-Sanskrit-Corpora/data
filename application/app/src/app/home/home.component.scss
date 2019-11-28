@@ -1,0 +1,66 @@
+@import 'theme';
+@import 'utils/em';
+@import 'utils/breakpoint';
+@import 'functions';
+
+.home {
+  width: 70vw;
+  margin: 0 auto;
+
+  &__titles {
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+    &.main__title {
+      font-size: 4vw;
+    }
+    &.sub__title {
+      font-size: 3vw;
+    }
+  }
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 0;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 44px;
+    left: 18px;
+    right: 40px;
+    height: 4px;
+    background: var(--brand-success);
+
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--brand-success);
+      content: "";
+    }
+
+    &::before {
+      top: -12px;
+    }
+
+    &::after {
+      bottom: -12px;
+    }
+  }
+}
