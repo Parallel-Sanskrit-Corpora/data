@@ -159,9 +159,9 @@ module.exports = function (app) {
     });
 
     return app.dao.comment.findAll({
-      where: {
-        volume: 3
-      }
+        where: {
+          volume: 3
+        }
     })
       .then((comments) => {
         const commentDictionary = {};
@@ -209,7 +209,7 @@ module.exports = function (app) {
                   if (firstResponseItemVerse && firstResponseItemVerse.chapter === chapter && firstResponseItemVerse.verse >= fromValue
                     && firstResponseItemVerse.verse <= toValue) {
                     responseItem.sanskrit = responseItemVerses;
-                  } else if (firstResponseItemVerse.chapter === chapter && firstResponseItemVerse.verse === parseInt(rangeValue, 10)) {
+                  } else if (firstResponseItemVerse && firstResponseItemVerse.chapter === chapter && firstResponseItemVerse.verse === parseInt(rangeValue, 10)) {
                     responseItem.sanskrit = responseItemVerses;
                   }
                 });
